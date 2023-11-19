@@ -1,38 +1,108 @@
-.App {
+.container {
+  margin-top: 20px;
+  font-family: "Poppins", sans-serif;
+  max-width: 750px;
+}
+
+.form .form-control {
+  display: inline;
+  width: 60%;
+  height: 40px;
+  margin: 15px 5px;
+}
+
+h2,
+#desc {
+  text-transform: capitalize;
+}
+
+.content h2 {
+  color: #4b4b4b;
+}
+
+.content h1 {
+  font-size: 64px;
+  font-weight: 400;
+  margin-top: 15px;
+}
+
+.content .temp {
+  font-size: 20px;
+  position: absolute;
+  cursor: default;
+  margin-left: 25px;
+}
+
+.content .temp.active {
+  color: #1ab5ed;
+}
+
+.content .temp.active:hover {
+  color: #009cd5;
+}
+
+.content #deg-cel {
+  left: 11.6%;
+}
+
+.content #deg-far {
+  left: 15%;
+}
+
+.content #line {
+  font-size: 25px;
+  left: 14%;
+  top: 51%;
+}
+
+.content a {
+  text-decoration: none;
+}
+
+.content a:hover {
+  color: #656464;
+}
+.content p,
+a {
+  color: #7c7a7a;
+  line-height: 0.7;
+}
+
+.content .right {
+  position: relative;
+  left: 70%;
+  top: -80px;
+}
+
+.weatherForecast {
+  margin-top: 20px;
   text-align: center;
+  color: #000;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.weekDate {
+  opacity: 0.6;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.weekTemp {
+  font-size: 13px;
+}
+.weakTempMin {
+  opacity: 0.6;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.footer {
+  margin: 25px 26%;
+  opacity: 0.85;
 }
 
-.App-link {
-  color: #61dafb;
+.footer a {
+  color: #007bff;
+  background: transparent;
+  text-decoration: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.footer a:hover {
+  color: #3e8adb;
+  text-decoration: underline;
 }
