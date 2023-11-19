@@ -95,7 +95,7 @@ export default function Weather() {
             </div>
             {/* <!-- Content area --> */}
             <div className="content">
-              <h2></h2>
+              <h2>{city}</h2>
               <p id="date-time"></p>
               <p>
                 <span id="desc"></span>
