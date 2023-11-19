@@ -8,8 +8,7 @@ export default function Weather() {
 
   useEffect(() => {
     handleResponse(city);
-  }, [city, handleResponse]); 
-  
+  }, [city, handleResponse]);
 
   function setTime(timestamp) {
     let now = new Date();
@@ -64,8 +63,8 @@ export default function Weather() {
     );
   }
 
-  function handleSubmit(e) {
-    e.preventDefault();
+  function handleSubmit() {
+    // e.preventDefault();
     const inputCity = document.querySelector("#city").value;
     setCity(inputCity || "Addis Ababa");
   }
