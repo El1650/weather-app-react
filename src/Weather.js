@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
 
 export default function Weather() {
-  let [temp, setTemp] = useState(null);
+  const [temp, setTemp] = useState(null);
+  const [city, setCity] = useState("Addis Ababa");
+
+  useEffect(() => {
+    handleResponse(city);
+  }, [city]);
 
   function setTime(timestamp) {
     let now = new Date();
@@ -28,11 +33,9 @@ export default function Weather() {
     return `${dt} ${hr}:${min}`;
   }
 
-  function handleResponse(e) {
-    e.preventDefault();
+  function handleResponse(city) {
     let apiKey = "8c19a74304f5d4fc0221e14cd3fdf1e0";
-    let city = document.querySelector("#city").value;
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Addis Ababa&appid=${apiKey}&units=metric`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(showTemp);
   }
 
@@ -60,6 +63,12 @@ export default function Weather() {
     );
   }
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    const inputCity = document.querySelector("#city").value;
+    setCity(inputCity || "Addis Ababa");
+  }
+
   return (
     <div>
       <div className="container">
@@ -67,9 +76,7 @@ export default function Weather() {
           <div className="card-body">
             {/* <!-- Header Section --> */}
             <div className="form">
-              <form
-                className="input-city App"
-                onSubmit={(e) => handleResponse(e)}>
+              <form className="input-city App" onSubmit={handleSubmit}>
                 <input
                   type="search"
                   className="form-control shadow-sm"
