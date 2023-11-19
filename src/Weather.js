@@ -82,6 +82,7 @@ export default function Weather() {
                   id="city"
                   autofocus="on"
                   autocomplete="none"
+                  onChanger={updateSubmit}
                 />
                 <input
                   type="submit"
