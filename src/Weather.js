@@ -3,13 +3,7 @@ import axios from "axios";
 import "./App.css";
 
 export default function Weather() {
-  let [city, setCity] = useState("");
   let [temp, setTemp] = useState(null);
-
-  function updateCity(e) {
-    e.preventDefault();
-    setCity(e.target.value);
-  }
 
   function setTime(timestamp) {
     let now = new Date();
@@ -82,7 +76,6 @@ export default function Weather() {
                   id="city"
                   autofocus="on"
                   autocomplete="none"
-                  onChanger={updateCity}
                 />
                 <input
                   type="submit"
@@ -96,7 +89,7 @@ export default function Weather() {
             </div>
             {/* <!-- Content area --> */}
             <div className="content">
-              <h2>{city}</h2>
+              <h2></h2>
               <p id="date-time"></p>
               <p>
                 <span id="desc"></span>
