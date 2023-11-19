@@ -97,7 +97,7 @@ export default function Weather() {
             </div>
             {/* <!-- Content area --> */}
             <div className="content">
-              <h2></h2>
+              <h2>Weather Information</h2>
               <p id="date-time"></p>
               <p>
                 <span id="desc"></span>
@@ -105,13 +105,13 @@ export default function Weather() {
               <h1>
                 <img src="" width="80" alt="" id="icon" />
                 <span id="temp-deg">{temp}</span>
-                <a href="#" className="temp active" id="deg-cel">
+                <a href="/" className="temp active" id="deg-cel">
                   °C
                 </a>
                 <span className="temp" id="line">
                   |
                 </span>
-                <a href="#" className="temp" id="deg-far">
+                <a href="/" className="temp" id="deg-far">
                   °F
                 </a>
               </h1>
