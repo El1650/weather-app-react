@@ -28,14 +28,13 @@ export default function Weather() {
     return `${dt} ${hr}:${min}`;
   }
 
-  function handleResponse(city) {
-    // e.preventDefault();
+  function handleResponse(e) {
+    e.preventDefault();
     let apiKey = "8c19a74304f5d4fc0221e14cd3fdf1e0";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    let city = document.querySelector("#city").value;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Addis Ababa&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(showTemp);
   }
-
-  handleResponse("Addis Ababa");
 
   function showTemp(response) {
     setTemp(Math.round(response.data.main.temp));
@@ -68,14 +67,16 @@ export default function Weather() {
           <div className="card-body">
             {/* <!-- Header Section --> */}
             <div className="form">
-              <form className="input-city App" onSubmit={handleResponse}>
+              <form
+                className="input-city App"
+                onSubmit={(e) => handleResponse(e)}>
                 <input
                   type="search"
                   className="form-control shadow-sm"
                   placeholder="Enter a city"
                   id="city"
-                  autofocus="on"
-                  autocomplete="none"
+                  autoFocus={true}
+                  autoComplete="none"
                 />
                 <input
                   type="submit"
