@@ -8,7 +8,8 @@ export default function Weather() {
 
   useEffect(() => {
     handleResponse(city);
-  }, [city]);
+  }, [city, handleResponse]); 
+  
 
   function setTime(timestamp) {
     let now = new Date();
