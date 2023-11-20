@@ -3,12 +3,11 @@ import axios from "axios";
 import "./App.css";
 
 export default function Weather() {
-  const [temp, setTemp] = useState(null);
   const [city, setCity] = useState("Addis Ababa");
 
   useEffect(() => {
-    handleResponse(city);
-  }, [city, handleResponse]);
+    handleResponse();
+  }, [city]);
 
   function setTime(timestamp) {
     let now = new Date();
@@ -33,40 +32,42 @@ export default function Weather() {
     return `${dt} ${hr}:${min}`;
   }
 
-  function handleResponse(city) {
-    let apiKey = "8c19a74304f5d4fc0221e14cd3fdf1e0";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  function handleResponse() {
+    let apiKey = "b4d8b9ad60f6t00838ba39200o473c14";
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
     axios.get(apiUrl).then(showTemp);
   }
 
   function showTemp(response) {
-    setTemp(Math.round(response.data.main.temp));
-    document.querySelector("#date-time").innerHTML = setTime(response.data.dt);
-    document.querySelector("h2").innerHTML = response.data.name;
+    console.log(response);
+    document.querySelector("#date-time").innerHTML = setTime(
+      response.data.time
+    );
+    document.querySelector("h2").innerHTML = response.data.city;
     document
       .querySelector("#icon")
       .setAttribute(
         "src",
-        `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+        ` http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
       );
     document.querySelector("#wind").innerHTML = Math.round(
       response.data.wind.speed * 3.6
     );
     document.querySelector("#hum").innerHTML = Math.round(
-      response.data.main.humidity
+      response.data.temperature.humidity
     );
     document.querySelector("#desc").innerHTML =
-      response.data.weather[0].description;
+      response.data.condition.description;
 
     document.querySelector("#temp-deg").innerHTML = Math.round(
-      response.data.main.temp
+      response.data.temperature.current
     );
   }
 
-  function handleSubmit() {
-    // e.preventDefault();
+  function handleSubmit(e) {
+    e.preventDefault();
     const inputCity = document.querySelector("#city").value;
-    setCity(inputCity || "Addis Ababa");
+    setCity(inputCity);
   }
 
   return (
@@ -104,7 +105,7 @@ export default function Weather() {
               </p>
               <h1>
                 <img src="" width="80" alt="" id="icon" />
-                <span id="temp-deg">{temp}</span>
+                <span id="temp-deg"></span>
                 <a href="/" className="temp active" id="deg-cel">
                   °C
                 </a>
