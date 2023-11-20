@@ -106,3 +106,23 @@ a {
   color: #3e8adb;
   text-decoration: underline;
 }
+
+@media (max-width: 990px) {
+  .content #deg-cel {
+    left: 27.6%;
+  }
+
+  .content #deg-far {
+    left: 35%;
+  }
+
+  .content #line {
+    font-size: 25px;
+    left: 33%;
+    top: 55%;
+  }
+  .btn-current {
+    visibility: hidden;
+    padding: 0.5rem;
+  }
+}

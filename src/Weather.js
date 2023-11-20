@@ -1,13 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import "./App.css";
 
 export default function Weather() {
   const [city, setCity] = useState("Addis Ababa");
-
-  useEffect(() => {
-    handleResponse();
-  }, [city]);
 
   function setTime(timestamp) {
     let now = new Date();
@@ -32,14 +28,7 @@ export default function Weather() {
     return `${dt} ${hr}:${min}`;
   }
 
-  function handleResponse() {
-    let apiKey = "b4d8b9ad60f6t00838ba39200o473c14";
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(showTemp);
-  }
-
-  function showTemp(response) {
-    console.log(response);
+  function handleResponse(response) {
     document.querySelector("#date-time").innerHTML = setTime(
       response.data.time
     );
@@ -68,6 +57,11 @@ export default function Weather() {
     e.preventDefault();
     const inputCity = document.querySelector("#city").value;
     setCity(inputCity);
+
+    let apiKey = "b4d8b9ad60f6t00838ba39200o473c14";
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${inputCity}&key=${apiKey}&units=metric`;
+
+    axios.get(apiUrl).then(handleResponse);
   }
 
   return (
