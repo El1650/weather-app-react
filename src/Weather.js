@@ -72,24 +72,31 @@ export default function Weather() {
             {/* <!-- Header Section --> */}
             <div className="form">
               <form className="input-city App" onSubmit={handleSubmit}>
-                <input
-                  type="search"
-                  className="form-control shadow-sm"
-                  placeholder="Enter a city"
-                  id="city"
-                  autoFocus={true}
-                  autoComplete="none"
-                />
-                <input
-                  type="submit"
-                  value="Search"
-                  className="btn btn-primary me-2"
-                />
-                <button id="current" className="btn btn-success">
-                  Current Location
-                </button>
+                <div className="row">
+                  <div className="col-9">
+                    <input
+                      type="search"
+                      className="form-control shadow-sm fm"
+                      placeholder="Enter a city"
+                      id="city"
+                      autoFocus={true}
+                      autoComplete="none"
+                    />
+                  </div>
+                  <div className="col-3">
+                    <input
+                      type="submit"
+                      value="Search"
+                      className="btn btn-primary me-2 fm"
+                    />
+                    <button id="current" className="btn btn-success fm">
+                      Current Location
+                    </button>
+                  </div>
+                </div>
               </form>
             </div>
+
             {/* <!-- Content area --> */}
             <div className="content">
               <h2>Weather Information</h2>
@@ -121,6 +128,11 @@ export default function Weather() {
             </div>
           </div>
         </div>
+        {/* Footer */}
+        <footer>
+          This project is coded by{" "}
+          <a href="https://github.com/El1650">Elena G.Mandefro</a>
+        </footer>
       </div>
     </div>
   );
