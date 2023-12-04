@@ -39,32 +39,27 @@ h2,
 }
 
 .content .temp {
-  font-size: 20px;
+  font-size: 25px;
   position: absolute;
   cursor: default;
-  margin-left: 25px;
 }
 
-.content .temp.active {
-  color: #1ab5ed;
+.content .unit {
+  font-size: 20px;
 }
-
-.content .temp.active:hover {
-  color: #009cd5;
-}
-
 .content #deg-cel {
-  left: 11.6%;
-}
-
-.content #deg-far {
   left: 15%;
 }
 
+.content #deg-far {
+  left: 19%;
+}
+
 .content #line {
-  font-size: 25px;
-  left: 14%;
-  top: 51%;
+  position: absolute;
+  font-size: 30px;
+  left: 18%;
+  top: 50.5%;
 }
 
 .content a {
@@ -104,7 +99,8 @@ a {
 }
 
 .footer {
-  margin: 25px 26%;
+  font-size: 15px;
+  margin-top: 25px;
   opacity: 0.85;
 }
 
@@ -128,19 +124,24 @@ a {
     margin-top: -50px;
   }
 
+  .content .unit {
+    font-size: 20px;
+  }
   .content #deg-cel {
-    left: 27.6%;
+    left: 33%;
   }
 
   .content #deg-far {
-    left: 35%;
+    left: 43%;
   }
 
   .content #line {
-    font-size: 25px;
-    left: 33%;
-    top: 53%;
+    position: absolute;
+    font-size: 30px;
+    left: 40%;
+    top: 52.5%;
   }
+
   .btn-current {
     visibility: hidden;
     padding: 0.5rem;
