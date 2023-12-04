@@ -104,7 +104,10 @@ export default function Weather(props) {
           {/* Footer */}
           <footer className="footer">
             This project is coded by{" "}
-            <a href="https://github.com/El1650" target="_blank">
+            <a
+              href="https://github.com/El1650"
+              target="_blank"
+              rel="noreferrer">
               Elena G.Mandefro
             </a>
           </footer>
