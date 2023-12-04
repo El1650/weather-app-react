@@ -62,11 +62,8 @@ export default function Weather(props) {
                       <input
                         type="submit"
                         value="Search"
-                        className="btn btn-primary me-2 fm"
+                        className="btn btn-primary me-2 px-4 fm"
                       />
-                      <button id="current" className="btn btn-success fm">
-                        Current Location
-                      </button>
                     </div>
                   </div>
                 </form>
@@ -107,7 +104,9 @@ export default function Weather(props) {
           {/* Footer */}
           <footer className="footer">
             This project is coded by{" "}
-            <a href="https://github.com/El1650">Elena G.Mandefro</a>
+            <a href="https://github.com/El1650" target="_blank">
+              Elena G.Mandefro
+            </a>
           </footer>
         </div>
       </div>
