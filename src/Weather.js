@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import FormatDate from "./FormatDate";
+import Forecast from "./Forecast";
 import WeatherTemperature from "./WeatherTemperature";
 import "./App.css";
 
@@ -99,6 +100,7 @@ export default function Weather(props) {
                 </div>
               </div>
             </div>
+            <Forecast icon={weatherData.icon} desc={weatherData.description} />
           </div>
 
           {/* Footer */}
