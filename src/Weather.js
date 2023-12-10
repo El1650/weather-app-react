@@ -19,6 +19,7 @@ export default function Weather(props) {
       humidity: Math.round(response.data.temperature.humidity),
       description: response.data.condition.description,
       temperature: Math.round(response.data.temperature.current),
+      coord: response.data.coordinates,
     });
   }
 
@@ -100,7 +101,11 @@ export default function Weather(props) {
                 </div>
               </div>
             </div>
-            <Forecast icon={weatherData.icon} desc={weatherData.description} />
+            <Forecast
+              icon={weatherData.icon}
+              desc={weatherData.description}
+              coords={weatherData.coord}
+            />
           </div>
 
           {/* Footer */}
