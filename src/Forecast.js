@@ -6,7 +6,7 @@ export default function Forecast(props) {
   let [loaded, setLoaded] = useState(false);
   let [forecast, setForecast] = useState(null);
 
-  useEffect(()=>{
+  useEffect(() => {
     setLoaded(false);
   }, [props.coords]);
 
@@ -26,6 +26,8 @@ export default function Forecast(props) {
                   <WeatherForecastDay data={dailyForecast} />
                 </div>
               );
+            } else {
+              return null;
             }
           })}
         </div>
