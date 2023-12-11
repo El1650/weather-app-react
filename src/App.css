@@ -95,7 +95,8 @@ a {
   opacity: 0.85;
 }
 
-.Forecast-day, .Forecast-temp{
+.Forecast-day,
+.Forecast-temp {
   font-size: 14px;
 }
 
@@ -143,5 +144,73 @@ a {
     font-size: 30px;
     left: 40%;
     top: 37%;
+  }
+}
+
+@media (max-width: 500px) {
+  .form .fm-1 {
+    width: 90%;
+  }
+  .form .fm-2 {
+    margin-left: -35px;
+  }
+
+  .content #deg-cel {
+    left: 40%;
+  }
+
+  .content #deg-far {
+    left: 50%;
+  }
+
+  .content #line {
+    left: 48%;
+    top: 25%;
+  }
+
+  .content h1 {
+    font-size: 60px;
+  }
+
+  .content p {
+    font-size: 15px;
+  }
+
+  .WeatherForecast .col {
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 400px) {
+  .content {
+    margin-bottom: -15%;
+  }
+
+  .content h2 {
+    font-size: 20px;
+  }
+
+  .content p {
+    font-size: 14px;
+  }
+
+  .content h1 {
+    font-size: 50px;
+  }
+
+  .content h1 img {
+    width: 70px;
+  }
+
+  .content #deg-cel {
+    left: 42%;
+  }
+
+  .content #deg-far {
+    visibility: hidden;
+  }
+
+  .content #line {
+    visibility: hidden;
   }
 }
