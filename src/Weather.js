@@ -93,7 +93,7 @@ export default function Weather(props) {
                 </h1>
                 <div className="content right">
                   <p>
-                    Wind: <span id="wind">{weatherData.wind}</span>KMPH
+                    Wind: <span id="wind">{weatherData.wind}</span> Km/h
                   </p>
                   <p>
                     Humidity: <span id="hum">{weatherData.humidity}</span>%
